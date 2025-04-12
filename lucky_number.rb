@@ -11,9 +11,12 @@ get("/") do
   "<h1>DICE ROLL</h1>
 
   <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev/dice/2/6> Roll two 6-sided dice</a>
-  "
   <br>
-  <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev/dice/2/10> Roll two 10-sided dice</a>"
+  <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev/dice/2/10> Roll two 10-sided dice</a>
+  <br>
+  <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev/dice/1/20> Roll one 20-sided dice</a>
+  <br>
+  <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev/dice/5/4> Roll five 4-sided dice</a>"
 end
 
 get("/zebra") do
@@ -36,7 +39,7 @@ get("/dice/2/6") do
    <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev> Home</a>"
 end
 
-get("/dice2/10") do
+get("/dice/2/10") do
   first_die = rand(1..10)
   second_die = rand(1..10)
   sum = first_die + second_die
@@ -46,4 +49,31 @@ get("/dice2/10") do
   "<h1>2d10</h1>
   <p>#{outcome}</p>
   <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev> Home</a>"
+end 
+
+  get("/dice/1/20") do
+    first_die = rand(1..20)
+  
+    outcome = "You rolled a #{first_die}"
+  
+    "<h1>1d20</h1>
+    <p>#{outcome}</p>
+    <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev> Home</a>"
+  end
+
+    get("/dice/5/4") do
+      first_die = rand(1..4)
+      second_die = rand(1..4)
+      third_die = rand(1..4)
+      fourth_die = rand(1..4)
+      fifth_die = rand(1..4)
+
+      sum = first_die + second_die + third_die + fourth_die + fifth_die
+    
+      outcome = "You rolled a #{first_die}, #{second_die}, #{third_die}, #{fourth_die} and a #{fifth_die} for a total of #{sum}"
+    
+      "<h1>5d4</h1>
+      <p>#{outcome}</p>
+      <a href=https://friendly-system-7vgvx6v94jvcrxp9-4567.app.github.dev> Home</a>"
+
 end
